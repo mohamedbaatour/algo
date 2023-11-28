@@ -1,0 +1,30 @@
+ALGORITHM algorithm
+VAR
+    charCount: integer
+    wordCount: integer
+    vowelCount: integer
+    sentence: string
+
+BEGIN
+    charCount = 0
+    wordCount = 0
+    vowelCount = 0
+
+    sentence = ReadInput()
+
+    FOR i = 1 TO Length(sentence) DO
+        charCount = charCount + 1
+
+        IF IsLetter(sentence[i]) THEN
+            wordCount = wordCount + 1
+
+            IF IsVowel(sentence[i]) THEN
+                vowelCount = vowelCount + 1
+            ENDIF
+    ENDFOR   
+
+    Output("Length of the sentence: " + charCount + " characters")
+    Output("Number of words in the sentence: " + wordCount + " words")
+    Output("Number of vowels in the sentence: " + vowelCount + " vowels")
+
+END
